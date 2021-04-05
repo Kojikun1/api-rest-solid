@@ -1,9 +1,11 @@
+require('dotenv').config();
 import express from 'express';
+import { createUserController } from './useCases/CreateUser';
 
 const router = express.Router();
 
-router.get('/users', (resquest, response) => {
-    return response.status(201).send();
+router.get('/users', (request, response) => {
+    return createUserController.handle(request, response);
 })
 
 export default router;
