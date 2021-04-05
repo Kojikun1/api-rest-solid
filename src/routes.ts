@@ -4,7 +4,7 @@ import { createUserController } from './useCases/CreateUser';
 
 const router = express.Router();
 
-router.get('/users', (request, response) => {
+router.post('/users', (request, response) => {
     return createUserController.handle(request, response);
 })
 
